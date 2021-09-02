@@ -3,5 +3,4 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.configmap.name }}
 data:
-  teste-arquivo: |-
-       Esse é o arquivo
+  teste-arquivo: {{ .Values.configmap.valor-arquivo}}
