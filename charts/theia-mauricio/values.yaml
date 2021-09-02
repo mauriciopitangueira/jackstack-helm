@@ -45,7 +45,6 @@ configmap:
   name: config-theia
   namespace: theia.mauricio
 
-
 ingress:
   enabled: true
   className: ""
