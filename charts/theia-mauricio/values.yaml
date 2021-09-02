@@ -41,6 +41,11 @@ service:
   port: 80
   targetPort: 3000
 
+configmap:
+  name: config-theia
+  namespace: theia.mauricio
+
+
 ingress:
   enabled: true
   className: ""
@@ -68,6 +73,17 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+
 
 autoscaling:
   enabled: false
